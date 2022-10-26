@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 interface Country {
 	id?: number;
 	name: string;
@@ -105,7 +104,9 @@ export class ContentComponent {
 	collectionSize = COUNTRIES.length;
 	countries: Country[];
 
-  constructor() {}
+  constructor() {
+    this.refreshCountries();
+  }
 
   refreshCountries() {
 		this.countries = COUNTRIES.map((country, i) => ({ id: i + 1, ...country })).slice(
