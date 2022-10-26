@@ -1,0 +1,67 @@
+<div class="container p-2 m-2 ">
+	<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+		<div class="row">
+      <div class="col-4">
+        <li ngbNavItem="Usuarios">
+          <a ngbNavLink>Usuarios</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Publicidad">
+          <a ngbNavLink>Publicidad</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Pedidos">
+          <a ngbNavLink>Pedidos</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Cercas Virtuales">
+          <a ngbNavLink>Cercas Virtuales</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Productos">
+          <a ngbNavLink>Productos</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Combos">
+          <a ngbNavLink>Combos</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Promociones">
+          <a ngbNavLink>Promociones</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Sucursales">
+          <a ngbNavLink>Sucursales</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Contacto">
+          <a ngbNavLink>Contacto</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Galeria">
+          <a ngbNavLink>Galeria</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Sugerencias/Comentarios">
+          <a ngbNavLink>Sugerencias/Comentarios</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Notificaciones">
+          <a ngbNavLink>Notificaciones</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+        <li ngbNavItem="Politicas">
+          <a ngbNavLink>Politicas</a>
+          <ng-template ngbNavContent></ng-template>
+        </li>
+      </div>
+      <div class="col-8">
+        <app-content></app-content>
+      </div>
+    </div>
+	</ul>
+
+	<div [ngbNavOutlet]="nav" class="ms-15"></div>
+</div>
+
+<pre>Active: {{ active }}</pre>

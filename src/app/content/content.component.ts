@@ -87,6 +87,73 @@ const COUNTRIES: Country[] = [
 		area: 9596960,
 		population: 1409517397,
 	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+  {
+		name: 'China',
+		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+		area: 9596960,
+		population: 1409517397,
+	},
+
 ];
 
 
@@ -100,7 +167,7 @@ const COUNTRIES: Country[] = [
 export class ContentComponent {
 
   page = 1;
-	pageSize = 4;
+	pageSize = 15;
 	collectionSize = COUNTRIES.length;
 	countries: Country[];
 
