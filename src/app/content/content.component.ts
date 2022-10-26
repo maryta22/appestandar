@@ -25,7 +25,7 @@ export class ContentComponent {
 
   title = 'http-get';
   clients; // <---
-  url: string = 'https://maryta22.pythonanywhere.com/api/client/';
+  url: string;
   error;
 
   page = 1;
@@ -35,9 +35,9 @@ export class ContentComponent {
 
   constructor(private http: HttpClient, private contentService : ContentService) {
     this.refreshElements();
-    this.contentService.getNameTable().subscribe(data =>{
+    this.contentService.getNameTable().subscribe(seccion =>{
       console.log("llamando al servicio");
-      this.changeTable(data)
+      this.changeTable(seccion)
     })
   }
 
@@ -45,10 +45,14 @@ export class ContentComponent {
     this.changeTable('client');
   }
 
-  changeTable(data) {
-    this.url = 'https://maryta22.pythonanywhere.com/api/' + data + '/';
+  changeTable(seccion) {
+    this.url = 'https://maryta22.pythonanywhere.com/api/' + seccion + '/';
     this.http.get<any>(this.url).subscribe(data => {
-      this.clients = data.cliente;
+      if(seccion == "client"){
+        this.clients = data.cliente;
+      }else{
+        this.clients = null;
+      }
     },error => this.error = error);
   }
 
