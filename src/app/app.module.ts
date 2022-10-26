@@ -8,6 +8,7 @@ import { ContentComponent } from './content/content.component';
 import { SessionComponent } from './session/session.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     FormsModule,
     NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [
