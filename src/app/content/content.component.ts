@@ -23,8 +23,7 @@ let clients: Client[] = [];
 
 export class ContentComponent {
 
-  title = 'http-get';
-  clients; // <---
+  clients;
   url: string;
   error;
 
@@ -45,12 +44,12 @@ export class ContentComponent {
     this.changeTable('client');
   }
 
-  changeTable(seccion) {
+  changeTable(seccion): void {
     console.log(" change table ");
-    this.url = 'https://maryta22.pythonanywhere.com/api/' + seccion + '/';
+    this.url = `https://maryta22.pythonanywhere.com/api/${seccion}/`;
     this.http.get<any>(this.url).subscribe(data => {
-      console.log(" en el suscribe ");
-        this.clients = data.cliente;
+      console.log(data);
+        this.clients = data.clientes;
     },error => {
       this.error = error
       this.clients = [];
