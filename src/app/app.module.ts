@@ -9,12 +9,16 @@ import { SessionComponent } from './session/session.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ContentComponent,
-    SessionComponent
+    SessionComponent,
+    LoginComponent,
+    MenuComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -30,8 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [],
   bootstrap: [
     AppComponent,
+    NavComponent,
     ContentComponent,
-    SessionComponent
+    SessionComponent,
+    LoginComponent,
+    MenuComponent
   ],
 })
 export class AppModule { }
