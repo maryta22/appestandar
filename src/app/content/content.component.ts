@@ -37,7 +37,7 @@ export class ContentComponent {
     this.refreshElements();
     this.contentService.getNameTable().subscribe(seccion =>{
       console.log("llamando al servicio");
-      this.changeTable(seccion)
+      this.changeTable(seccion);
     })
   }
 
@@ -46,18 +46,19 @@ export class ContentComponent {
   }
 
   changeTable(seccion) {
+    console.log(" change table ");
     this.url = 'https://maryta22.pythonanywhere.com/api/' + seccion + '/';
     this.http.get<any>(this.url).subscribe(data => {
-      if(seccion == "client"){
+      console.log(" en el suscribe ");
         this.clients = data.cliente;
-      }else{
-        this.clients = null;
-      }
-    },error => this.error = error);
+    },error => {
+      this.error = error
+      this.clients = [];
+    });
   }
 
   refreshElements() {
-		this.clients_pie = clients.map((country, i) => ({ id: i + 1, ...country })).slice(
+		this.clients_pie = clients.map((element, i) => ({ id: i + 1, ...element })).slice(
 			(this.page - 1) * this.pageSize,
 			(this.page - 1) * this.pageSize + this.pageSize,
 		);
