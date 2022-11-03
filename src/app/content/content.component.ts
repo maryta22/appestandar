@@ -35,7 +35,6 @@ export class ContentComponent {
   constructor(private http: HttpClient, private contentService : ContentService) {
     this.refreshElements();
     this.contentService.getNameTable().subscribe(seccion =>{
-      console.log("llamando al servicio");
       this.changeTable(seccion);
     })
   }
@@ -45,11 +44,10 @@ export class ContentComponent {
   }
 
   changeTable(seccion): void {
-    console.log(" change table ");
     this.url = `https://maryta22.pythonanywhere.com/api/${seccion}/`;
     this.http.get<any>(this.url).subscribe(data => {
       console.log(data);
-        this.clients = data.clientes;
+      this.clients = data.clientes;
     },error => {
       this.error = error
       this.clients = [];

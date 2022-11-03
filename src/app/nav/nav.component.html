@@ -2,12 +2,8 @@
 	<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
 		<div class="row">
       <div class="col-4">
-        <li ngbNavItem="client" (click) = "actualizarEstado()">
-          <a ngbNavLink>Clientes</a>
-          <ng-template ngbNavContent></ng-template>
-        </li>
-        <li ngbNavItem="employee" (click) = "actualizarEstado()">
-          <a ngbNavLink>Empleados</a>
+        <li ngbNavItem="user" (click) = "actualizarEstado()">
+          <a ngbNavLink>Usuarios</a>
           <ng-template ngbNavContent></ng-template>
         </li>
         <li ngbNavItem="" (click) = "actualizarEstado()">
