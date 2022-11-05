@@ -11,7 +11,7 @@ export class NavComponent implements OnInit {
   active : string;
 
   constructor(private contentService: ContentService) {
-    this.active = 'client';
+    this.active = 'userList';
   }
 
   ngOnInit(): void {

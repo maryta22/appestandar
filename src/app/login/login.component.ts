@@ -11,17 +11,11 @@ import { LoginService } from '../services/login.service';
 @Injectable()
 export class LoginComponent implements OnInit {
 
-  isLogin;
   url: string;
   error;
   data;
 
   constructor(private http: HttpClient, private loginService : LoginService) {
-    this.isLogin = false;
-    loginService.getisLogin().subscribe(response =>{
-      this.isLogin = response;
-      console.log(this.isLogin)
-    })
   }
 
   ngOnInit(): void {

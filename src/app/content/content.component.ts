@@ -3,16 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { ContentService } from '../services/content.service';
 
 
-interface Client {
+interface User {
 	id: number;
 	name: string;
+  lastname : string;
 	email: string;
-	tipo: 'cliente';
+	role: string;
 	date_register: string;
-  state: number;
+  status: number;
 }
 
-let clients: Client[] = [];
+let users: User[] = [];
 
 @Component({
   selector: 'app-content',
@@ -20,46 +21,55 @@ let clients: Client[] = [];
   styleUrls: ['./content.component.css']
 })
 
-
 export class ContentComponent {
 
-  clients;
   url: string;
-  error;
+  nav: string;
 
   page = 1;
-	pageSize = 15;
-	collectionSize = clients.length;
-	clients_pie: Client[];
+	pageSize = 10;
+	collectionSize = users.length;
+	users_pie : User[];
 
   constructor(private http: HttpClient, private contentService : ContentService) {
-    this.refreshElements();
     this.contentService.getNameTable().subscribe(seccion =>{
+      this.nav = seccion;
       this.changeTable(seccion);
     })
+
   }
 
   ngOnInit(): void {
-    this.changeTable('client');
+    this.changeTable('userList');
+    this.nav = "Usuarios";
   }
 
   changeTable(seccion): void {
-    this.url = `https://maryta22.pythonanywhere.com/api/${seccion}/`;
+    this.url = `http://lewipinja.pythonanywhere.com/api/${seccion}/`;
     this.http.get<any>(this.url).subscribe(data => {
       console.log(data);
-      this.clients = data.clientes;
+      users = data;
+      this.collectionSize = users.length;
+      this.refreshUsers();
     },error => {
-      this.error = error
-      this.clients = [];
+      users = [];
+      this.refreshUsers();
     });
   }
 
-  refreshElements() {
-		this.clients_pie = clients.map((element, i) => ({ id: i + 1, ...element })).slice(
+  refreshUsers() {
+		this.users_pie = users.map((user, i) => ({ id: i + 1, ...user })).slice(
 			(this.page - 1) * this.pageSize,
 			(this.page - 1) * this.pageSize + this.pageSize,
 		);
+    console.log(this.collectionSize);
 	}
+
+
+
+  editar(){
+
+  }
 
 }
 

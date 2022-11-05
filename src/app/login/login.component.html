@@ -1,8 +1,7 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col"></div>
-    <div class="col-8">
-      <div *ngIf=" !isLogin ; else elseBlock">
+    <div class="col-4"></div>
+    <div class="col-4">
         <div class = "row">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0">
             <defs>
@@ -46,9 +45,6 @@
           <button class="btn btn-dark mt-5" type="button" (click)="iniciarSesion( email.value , password.value )">Inciar Sesion</button>
         </div>
       </div>
-      <ng-template #elseBlock><app-session></app-session></ng-template>
-    </div>
-    <div class="col"></div>
   </div>
 </div>
 

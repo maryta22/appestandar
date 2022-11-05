@@ -1,1 +1,4 @@
-<app-login></app-login>
+<div *ngIf=" !isLogin ; else elseBlock">
+  <app-login></app-login>
+</div>
+<ng-template #elseBlock><app-session></app-session></ng-template>

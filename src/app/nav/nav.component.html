@@ -1,62 +1,62 @@
-<div class="container p-2 m-2 ">
+<div class="container p-2 m-2">
 	<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
 		<div class="row">
       <div class="col-4">
-        <li ngbNavItem="user" (click) = "actualizarEstado()">
+        <li ngbNavItem="userList" (click) = "actualizarEstado()">
           <a ngbNavLink>Usuarios</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="advertisingList" (click) = "actualizarEstado()">
           <a ngbNavLink>Publicidad</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="orderList" (click) = "actualizarEstado()">
           <a ngbNavLink>Pedidos</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="area" (click) = "actualizarEstado()">
+        <li ngbNavItem="areaList" (click) = "actualizarEstado()">
           <a ngbNavLink>Cercas Virtuales</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="products" (click) = "actualizarEstado()">
+        <li ngbNavItem="productList" (click) = "actualizarEstado()">
           <a ngbNavLink>Productos</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="comboList" (click) = "actualizarEstado()">
           <a ngbNavLink>Combos</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="promotionList" (click) = "actualizarEstado()">
           <a ngbNavLink>Promociones</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="localList" (click) = "actualizarEstado()">
           <a ngbNavLink>Sucursales</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="constactList" (click) = "actualizarEstado()">
           <a ngbNavLink>Contacto</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="galeryList" (click) = "actualizarEstado()">
           <a ngbNavLink>Galeria</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="sugestionList" (click) = "actualizarEstado()">
           <a ngbNavLink>Sugerencias/Comentarios</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="notificationList" (click) = "actualizarEstado()">
           <a ngbNavLink>Notificaciones</a>
           <ng-template ngbNavContent></ng-template>
         </li>
-        <li ngbNavItem="" (click) = "actualizarEstado()">
+        <li ngbNavItem="policyList" (click) = "actualizarEstado()">
           <a ngbNavLink>Politicas</a>
           <ng-template ngbNavContent></ng-template>
         </li>
       </div>
       <div class="col-8">
-        <app-content></app-content>
+          <app-content></app-content>
       </div>
     </div>
 	</ul>
