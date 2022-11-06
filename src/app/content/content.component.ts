@@ -13,7 +13,7 @@ interface User {
   status: number;
 }
 
-let users: User[] = [];
+let elements : any;
 
 @Component({
   selector: 'app-content',
@@ -23,49 +23,51 @@ let users: User[] = [];
 
 export class ContentComponent {
 
-  url: string;
   nav: string;
 
   page = 1;
 	pageSize = 10;
-	collectionSize = users.length;
-	users_pie : User[];
+	collectionSize = 0;
+	elements_pie ;
 
-  constructor(private http: HttpClient, private contentService : ContentService) {
-    this.contentService.getNameTable().subscribe(seccion =>{
-      this.nav = seccion;
-      this.changeTable(seccion);
-    })
-
+  constructor(private contentService : ContentService) {
+    this.fillTable();
   }
 
   ngOnInit(): void {
-    this.changeTable('userList');
-    this.nav = "Usuarios";
   }
 
-  changeTable(seccion): void {
-    this.url = `http://lewipinja.pythonanywhere.com/api/${seccion}/`;
-    this.http.get<any>(this.url).subscribe(data => {
-      console.log(data);
-      users = data;
-      this.collectionSize = users.length;
-      this.refreshUsers();
-    },error => {
-      users = [];
-      this.refreshUsers();
-    });
-  }
-
-  refreshUsers() {
-		this.users_pie = users.map((user, i) => ({ id: i + 1, ...user })).slice(
+  refreshPie() {
+		this.elements_pie = elements.map((user, i) => ({ id: i + 1, ...user })).slice(
 			(this.page - 1) * this.pageSize,
 			(this.page - 1) * this.pageSize + this.pageSize,
 		);
-    console.log(this.collectionSize);
 	}
 
-
+  fillTable(){
+    this.contentService.getData().subscribe(data =>{
+      elements = data;
+      this.collectionSize = data.length;
+      this.refreshPie();
+    })
+    this.contentService.getName().subscribe(name =>{
+      console.log(name)
+      switch(name){
+        case "userList":{
+          this.nav = "Usuarios";
+          break;
+        }
+        case "advertisingList":{
+          this.nav = "Publicidad"
+          break;
+        }
+        default:{
+          this.nav = "Ninguno";
+          break;
+        }
+      }
+    })
+  }
 
   editar(){
 

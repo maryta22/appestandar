@@ -12,6 +12,7 @@ export class NavComponent implements OnInit {
 
   constructor(private contentService: ContentService) {
     this.active = 'userList';
+    this.actualizarEstado();
   }
 
   ngOnInit(): void {

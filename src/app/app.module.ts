@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { UsersComponent } from './content/users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { MenuComponent } from './menu/menu.component';
     ContentComponent,
     SessionComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    UsersComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

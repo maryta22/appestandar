@@ -12,23 +12,23 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let client of users_pie">
+    <tr *ngFor="let client of elements_pie">
       <th scope="row">{{ client.id }}</th>
       <td>{{ client.name }}</td>
       <td>{{ client.lastname }}</td>
       <td>{{ client.email }}</td>
       <td>{{ client.status }}</td>
       <td>{{ client.role }}</td>
-      <td><button type="button" class="btn btn-secondary" (click)="editar()">Editar</button></td>
+      <td><button type="button" class="btn btn-primary" (click)="editar()">Editar</button></td>
     </tr>
   </tbody>
 </table>
 
 <div class="d-flex justify-content-between p-2">
-  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshUsers()">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshPie()">
   </ngb-pagination>
 
-  <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshUsers()">
+  <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshPie()">
     <option [ngValue]="10">10 items per page</option>
     <option [ngValue]="20">20 items per page</option>
   </select>
