@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu.component';
-import { UsersComponent } from './content/users/users.component';
+import { BarraOpcionesSesionComponent } from './barra-opciones-sesion/barra-opciones-sesion.component';
+import { LogoComponent} from './logo/logo.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +19,8 @@ import { UsersComponent } from './content/users/users.component';
     ContentComponent,
     SessionComponent,
     LoginComponent,
-    MenuComponent,
-    UsersComponent,
+    BarraOpcionesSesionComponent,
+    LogoComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -40,7 +40,8 @@ import { UsersComponent } from './content/users/users.component';
     ContentComponent,
     SessionComponent,
     LoginComponent,
-    MenuComponent
+    BarraOpcionesSesionComponent,
+    LogoComponent
   ],
 })
 export class AppModule { }
