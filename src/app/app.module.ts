@@ -11,7 +11,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { BarraOpcionesSesionComponent } from './barra-opciones-sesion/barra-opciones-sesion.component';
-import { LogoComponent} from './logo/logo.component'
+import { LogoComponent} from './logo/logo.component';
+import { CrearUsuarioComponent } from './content/crear-usuario/crear-usuario.component';
+import { UsuarioComponent } from './content/usuario/usuario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { LogoComponent} from './logo/logo.component'
     LoginComponent,
     BarraOpcionesSesionComponent,
     LogoComponent,
+    CrearUsuarioComponent,
+    UsuarioComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
