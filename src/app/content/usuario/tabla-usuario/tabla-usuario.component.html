@@ -1,0 +1,51 @@
+<div class = "container ">
+  <div class = "row d-flex align-items-center  mb-3">
+    <div class = "col">
+      <h1> Usuarios ({{collectionSize}})</h1>
+    </div>
+    <div class = "col mt-5  d-flex justify-content-end">
+      <div class = "mx-2">
+        <button type="button" class="btn btn-primary" (click)="crearUsuario()">Crear Usuario</button>
+      </div>
+      <div class = "mx-2">
+        <button type="button" class="btn btn-primary" (click)="crearRol()">Crear Rol</button>
+      </div>
+    </div>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Rol</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of elements_pie">
+      <th scope="row">{{ client.id }}</th>
+      <td>{{ client.name }}</td>
+      <td>{{ client.lastname }}</td>
+      <td>{{ client.email }}</td>
+      <td>{{ client.status }}</td>
+      <td>{{ client.role }}</td>
+      <td><button type="button" class="btn btn-primary" (click)="editar()">Editar</button></td>
+      <td><button type="button" class="btn btn-danger" (click)="eliminar()">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshPie()">
+  </ngb-pagination>
+
+  <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshPie()">
+    <option [ngValue]="10">10 items per page</option>
+    <option [ngValue]="20">20 items per page</option>
+  </select>
+</div>

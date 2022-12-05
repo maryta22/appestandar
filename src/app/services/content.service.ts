@@ -16,13 +16,16 @@ export class ContentService {
   modifyTable( name : string): any{
     this.url = `http://lewipinja.pythonanywhere.com/api/${name}/`;
     this.http.get<any>(this.url).subscribe(data => {
-      console.log(data);
       this.table.next(data);
       this.name.next(name);
     },error => {
       this.table.next([]);
       this.name.next("");
     });
+  }
+
+  modifyName(name : any): any{
+    this.name.next(name);
   }
 
   getData(): Observable<any>{

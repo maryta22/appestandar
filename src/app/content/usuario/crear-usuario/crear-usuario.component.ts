@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearUsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor( private usuarioService : UsuarioService) { }
 
   ngOnInit(): void {
+  }
+
+  regresar(){
+    this.usuarioService.actualizarComponente("tabla")
+  }
+
+  crear(){
+
   }
 
 }

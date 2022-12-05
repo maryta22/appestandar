@@ -12,13 +12,13 @@ export class NavComponent implements OnInit {
 
   constructor(private contentService: ContentService) {
     this.active = 'userList';
-    this.actualizarEstado();
   }
 
   ngOnInit(): void {
+    this.actualizarEstado();
   }
 
   actualizarEstado(){
-    this.contentService.modifyTable(this.active);
+    this.contentService.modifyName(this.active);
   }
 }
